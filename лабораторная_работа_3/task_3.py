@@ -6,9 +6,7 @@ def count_letters(text):
     letter_count = OrderedDict()  # Используем OrderedDict для сохранения порядка
     for char in text:
         if char.isalpha():
-            if char not in letter_count:
-                letter_count[char] = 0
-            letter_count[char] += 1
+            letter_count[char] = letter_count.get(char, 0) + 1
     return letter_count
 
 # Функция для вычисления частоты каждой буквы
